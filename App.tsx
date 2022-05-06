@@ -4,12 +4,8 @@ import { ThemeProvider } from "styled-components/native";
 import theme from "./src/styles/theme";
 
 import { Routes } from "./src/routes";
-import Initial from "./src/screens/Initial/index";
+import Login from "./src/screens/Login/index";
 
 export default function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <Routes />
-    </ThemeProvider>
-  );
+  return <Login />;
 }
