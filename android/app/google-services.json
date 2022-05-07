@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "435723703745",
+    "project_id": "nobully-bea30",
+    "storage_bucket": "nobully-bea30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435723703745:android:27d54bf8501f25da6a8b40",
+        "android_client_info": {
+          "package_name": "com.nobully"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435723703745-asddqdcddeuodrv51f578rt8ovsuviar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqVGsM3_EC9ALMcjbClCkk5An4kzWdnOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435723703745-asddqdcddeuodrv51f578rt8ovsuviar.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

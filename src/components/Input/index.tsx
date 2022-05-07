@@ -1,13 +1,52 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useState } from "react";
+import { TextInputProps, Alert } from "react-native";
+import { Container, InputText, IconContainer } from "./styles";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-import { Container, InputText, ContainerIcon } from "./styles";
-import Ionicons from "@expo/vector-icons/Ionicons";
+interface Props extends TextInputProps {
+  iconName: string;
+  sizeIcon: number;
+  color: string;
+  placeholder?: string;
+  value?: string;
+}
 
-const Input: React.FC = () => {
+const Input: React.FC<Props> = ({
+  iconName,
+  sizeIcon,
+  color,
+  placeholder,
+  keyboardType,
+  value,
+  onChangeText,
+}) => {
+  const [isFocused, setIsFocused] = useState(false);
+  function handleInputFocused() {
+    setIsFocused(true);
+  }
+  function handleInputBlur() {
+    setIsFocused(false);
+  }
   return (
     <Container>
-      <Ionicons name="md-checkmark-circle" size={32} color="green" />
+      <IconContainer isFocused={isFocused}>
+        <Icon
+          name={iconName}
+          size={sizeIcon}
+          color={isFocused ? "#DC1637" : color}
+        />
+      </IconContainer>
+      <InputText
+        onChangeText={onChangeText}
+        value={value}
+        isFocused={isFocused}
+        onFocus={handleInputFocused}
+        onBlur={handleInputBlur}
+        placeholder={placeholder}
+        keyboardType={keyboardType}
+        autoCorrect={false}
+        autoCapitalize="none"
+      />
     </Container>
   );
 };

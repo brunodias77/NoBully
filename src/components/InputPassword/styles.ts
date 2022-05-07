@@ -12,7 +12,6 @@ export const Container = styled.View`
   justify-content: center;
   flex-direction: row;
 `;
-
 export const IconContainer = styled.View<Props>`
   width: 55px;
   justify-content: center;
@@ -26,13 +25,24 @@ export const IconContainer = styled.View<Props>`
       border-bottom-color: #dc1637;
     `};
 `;
-
 export const InputText = styled.TextInput<Props>`
-  flex: 1;
   background-color: #ffffff;
+  flex: 1;
   padding: 0 20px;
   color: #7a7a80;
   font-size: ${RFValue(15)}px;
+  ${({ isFocused }) =>
+    isFocused &&
+    css`
+      border-bottom-width: 2px;
+      border-bottom-color: #dc1637;
+    `};
+`;
+export const ChangePasswordVisibilityButton = styled.TouchableOpacity<Props>`
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  padding-right: 18px;
   ${({ isFocused }) =>
     isFocused &&
     css`

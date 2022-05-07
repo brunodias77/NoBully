@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Header, Title, SubTitle, Form, CheckBoxs } from "./styles";
 import {
   KeyboardAvoidingView,
@@ -7,8 +7,13 @@ import {
   Alert,
 } from "react-native";
 import Button from "../../components/Button/index";
+import Input from "../../components/Input/index";
+import InputPassword from "../../components/InputPassword/index";
 
 const Register: React.FC = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <KeyboardAvoidingView behavior="position" enabled>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -17,7 +22,7 @@ const Register: React.FC = () => {
             <Title>Crie sua{"\n"}conta</Title>
             <SubTitle>Faça seu cadastro de{"\n"}forma rápida e fácil</SubTitle>
           </Header>
-          {/* <Form>
+          <Form>
             <Input
               iconName="account"
               sizeIcon={30}
@@ -35,7 +40,7 @@ const Register: React.FC = () => {
               onChangeText={setEmail}
             />
 
-            <PasswordInput
+            <InputPassword
               placeholder="Senha"
               color="#7A7A80"
               iconName="lock-outline"
@@ -44,7 +49,7 @@ const Register: React.FC = () => {
               onChangeText={setPassword}
               value={password}
             />
-          </Form> */}
+          </Form>
 
           <Button title="Cadastrar" />
         </Container>
